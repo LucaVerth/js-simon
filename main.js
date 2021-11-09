@@ -4,6 +4,7 @@ Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto 
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 */
 
+const numbers = 5;
 let randomNumArr = randomArr();
 
 const output = document.querySelector('#output');
@@ -14,13 +15,9 @@ console.log(randomNumArr);
 
 function randomArr() {
   const randomNumArr = [];
-  for (let i=0; randomNumArr.length < 5; i++){
-    const number = randomNumberInt(1, 100);
-    if (!randomNumArr.includes(number)){
-      randomNumArr.push(number); 
-    }else{
-      return number;
-    }
+  while (randomNumArr.length < numbers) {
+     const number = randomNumberInt(1, 100)
+    if (!randomNumArr.includes(number)) randomNumArr.push(number);
   }
   return randomNumArr;
 }
